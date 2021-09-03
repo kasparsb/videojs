@@ -1,0 +1,192 @@
+@import (inline) '../../node_modules/video.js/dist/video-js.min.css';
+@import (inline) '../../node_modules/videojs-ima/dist/videojs.ima.css';
+
+
+//@import 'resets';
+
+.video {
+    position: relative;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    .video-w {
+        display: none;
+        position: relative;
+        padding-bottom: 56.20608899297424%;
+    }
+    .ima-ads-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000
+    }
+
+    .video-js {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .placeholder {
+        position: relative;
+        .image {
+            position: relative;
+            padding-bottom: 56.15079365%;
+            background: #888;
+
+            img {
+                position: absolute;
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .play {
+            width: 90px;
+            height: 90px;
+            border: 3px solid #fff;
+            border-radius: 50%;
+            opacity: .8;
+            background: rgba(255,255,255,0.3);
+            position: relative;
+            position: absolute;
+            cursor: pointer;
+            top: 50%;
+            left: 50%;
+            margin-top: -45px;
+            margin-left: -45px;
+
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 10px 0 10px 16px;
+                border-color: transparent transparent transparent #fff;
+                left: 50%;
+                top: 50%;
+                margin-left: -5px;
+                margin-top: -10px;
+            }
+        }
+    }
+
+    .skip-ad {
+        display: none;
+
+        position: absolute;
+        right: 0;
+        bottom: 64px;
+
+        a {
+            background: rgba(0,0,0,0.7);
+            border: 1px solid rgba(255,255,255,0.5);
+            color: #fff;
+            padding: 10px 6px 10px 10px;
+            text-align: center;
+            cursor: pointer;
+            font-family: SF Pro Display,Roboto,serif;
+            font-size: 14px;
+        }
+    }
+
+    .ad-click {
+        display: none;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 30px;
+
+        cursor: pointer;
+
+        background: rgba(0,0,0,0.001);
+    }
+
+
+    &.is-video {
+        .video-w {
+            display: block;
+        }
+        .placeholder {
+            display: none;
+        }
+    }
+    &.is-ad {
+        .skip-ad {
+            display: block;
+        }
+    }
+
+
+    .vjs-big-play-button {
+        .vjs-icon-placeholder,
+        .vjs-control-text {
+            display: none;
+        }
+        width: 90px;
+            height: 90px;
+            border: 3px solid #fff;
+            border-radius: 50%;
+            opacity: .8;
+            background: rgba(255,255,255,0.3);
+            position: relative;
+            position: absolute;
+            cursor: pointer;
+            top: 50%;
+            left: 50%;
+            margin-top: -45px;
+            margin-left: -45px;
+
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 10px 0 10px 16px;
+                border-color: transparent transparent transparent #fff;
+                left: 50%;
+                top: 50%;
+                margin-left: -5px;
+                margin-top: -10px;
+            }
+    }
+
+
+    .vjs-seek-to-live-control {
+        display: none;
+    }
+    .video-js {
+        .vjs-play-progress {
+            background: #dd2b30;
+            &:before {
+                color: #dd2b30;
+            }
+        }
+    }
+    &.is-ad-playing {
+        .ad-click {
+            display: block;
+        }
+        .video-js {
+            .vjs-play-progress {
+                background: yellow;
+                &:before {
+                    color: yellow;
+                }
+            }
+        }
+    }
+}
